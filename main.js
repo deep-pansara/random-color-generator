@@ -10,7 +10,6 @@ const heading7 = document.querySelector(".heading7");
 const heading8 = document.querySelector(".heading8");
 const heading9 = document.querySelector(".heading9");
 const heading10 = document.querySelector(".heading10");
-
 const color0 = document.querySelector(".color0");
 const color1 = document.querySelector(".color1");
 const color2 = document.querySelector(".color2");
@@ -22,36 +21,28 @@ const color7 = document.querySelector(".color7");
 const color8 = document.querySelector(".color8");
 const color9 = document.querySelector(".color9");
 const color10 = document.querySelector(".color10");
-
-
-
 const btn = document.querySelector(".btn");
-
-
 
 btn.addEventListener("click",() =>{
     randomColorGenerator();
 });
 
-
 let hexCodeString = "0123456789abcdef";
 let hexCodeArray = hexCodeString.split("")
 
-randomColorGenerator= () => {    
+randomColorGenerator= () => {
     let arr =[];
     for (let i = 0; i < 11; i++) {
         let newArr = [];
-        
         for (let i = 1; i <= 6; i++) {
             let randomNumber = Math.floor(Math.random()*hexCodeArray.length);
-            let hexCodeCharacter = hexCodeArray[randomNumber]
+            let hexCodeCharacter = hexCodeArray[randomNumber];
             newArr.push(hexCodeCharacter);            
-        }
-        
+        };    
         arr.push(newArr.join(""));
-    }
-    console.log(arr);
+    };
     
+    //console.log(arr);
     
     heading0.innerHTML = "#" + arr[0]
     heading1.innerHTML = "#" + arr[1]
@@ -64,7 +55,6 @@ randomColorGenerator= () => {
     heading8.innerHTML = "#" + arr[8]
     heading9.innerHTML = "#" + arr[9]
     heading10.innerHTML = "#" + arr[10]
-
     color0.style.backgroundColor = "#" + arr[0]
     color1.style.backgroundColor = "#" + arr[1]
     color2.style.backgroundColor = "#" + arr[2]
@@ -76,7 +66,5 @@ randomColorGenerator= () => {
     color8.style.backgroundColor = "#" + arr[8]
     color9.style.backgroundColor = "#" + arr[9]
     color10.style.backgroundColor = "#" + arr[10]
-
-    
 }
 randomColorGenerator();
